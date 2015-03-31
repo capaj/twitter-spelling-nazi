@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+<template>
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1>Twitter wall of spelling shame</h1>
+			<h2>${worstTweet.author}</h2>
+			<p class="lead">${worstTweet.text}</p>
+		</div>
+
+		<hr>
+
+		<div class="tweets-grid">
+			<tweet repeat.for="tweet of recentTweets" style.bind="tweet.styleObject">
+				<div class="img-container">
+					<img src.bind="tweet.user.profile_image_url" alt="">
+				</div>
+				<div>
+					<a href="//twitter.com/${tweet.user.screen_name}"><h4>${tweet.user.screen_name}</h4></a>
+					<p>${$parent.htmlDecode(tweet.text)}</p>
+				</div>
+			</tweet>
+		</div>
+
+		<hr>
+		<p if.bind="recentTweets.length > 1">
+			Showing latest ${recentTweets.length} tweets.
+		</p>
+
+	</div>
+</template>

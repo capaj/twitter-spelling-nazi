@@ -1,0 +1,14 @@
+.tweets-grid{
+	display: flex;
+	flex-wrap: wrap;
+}
+tweet{
+	margin: 15px;
+	display: inline-flex;
+}
+tweet .img{
+	height: 100%;
+}
+.img-container{
+	margin: 5px;
+}

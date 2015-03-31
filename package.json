@@ -1,6 +1,6 @@
 {
   "name": "spelling-shame",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "little twitter bot experiment",
   "main": "index.js",
   "scripts": {
@@ -13,16 +13,19 @@
   "author": "capajj@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^2.2.0",
     "mocha": "^2.2.1",
-    "chai": "^2.2.0"
+    "sinon": "^1.14.1"
   },
   "dependencies": {
     "connect-livereload": "^0.5.2",
     "express": "^4.11.0",
+    "lodash": "^3.6.0",
+    "mocha": "^2.1.0",
     "morgan": "^1.5.1",
     "natural": "^0.2.1",
-    "twit": "^1.1.20",
-    "mocha": "^2.1.0"
+    "socket.io": "^1.3.5",
+    "twit": "^1.1.20"
   },
   "jspm": {
     "directories": {
@@ -33,6 +36,8 @@
       "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.10.0",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.5.0",
       "aurelia-framework": "github:aurelia/framework@^0.9.0",
+      "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "jquery": "github:components/jquery@^2.1.3",
       "moment": "github:moment/moment@^2.9.0"
     },
     "devDependencies": {

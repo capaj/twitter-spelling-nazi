@@ -9,7 +9,8 @@ var T = new Twit(require('./secrets/twitter.json'));
 
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var mispelledTweetsAgregator = require('./lib/mispelled-tweets-agregator')(T, io);
+var Agregator = require('./lib/mispelled-tweets-agregator');
+var mispelledTweetsAgregator = new Agregator(T, io);
 
 if (env === 'development') {
 	app.use(require('connect-livereload')({
@@ -23,7 +24,7 @@ if (env === 'development') {
 
 app.use(express.static('./public/'));
 
-app.listen(port).on('listening', function() {
+server.listen(port).on('listening', function() {
 	console.log("server started in ", env);
 });
 
