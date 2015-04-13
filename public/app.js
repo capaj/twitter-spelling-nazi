@@ -3,7 +3,7 @@ import * as bootstrap from 'bootstrap';
 
 export class twitterSpellingWall{
 	constructor(){
-		this.recentTweets = [{}];
+		this.recentTweets = [];
 
 		var socket = io.connect('http://localhost:8020');
 		socket.on('addedTweet', tweet => {
