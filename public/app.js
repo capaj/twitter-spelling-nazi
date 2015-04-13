@@ -3,11 +3,11 @@ import * as bootstrap from 'bootstrap';
 
 export class twitterSpellingWall{
 	constructor(){
-		this.recentTweets = [];
+		this.recentTweets = [{}];
 
 		var socket = io.connect('http://localhost:8020');
 		socket.on('addedTweet', tweet => {
-			console.log("tweet", tweet);
+			//console.log("tweet", tweet);
 			if (tweet.user.profile_background_color === tweet.user.profile_text_color) {
 				tweet.user.profile_background_color = "888666"
 			}
@@ -22,10 +22,8 @@ export class twitterSpellingWall{
 		});
 
 	}
-	htmlDecode(input){
-		var e = document.createElement('div');
-		e.innerHTML = input;
-		return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+	get worstTweet(){
+		var worstScore = Math.min.apply(Math, this.recentTweets.map(function(o){return o.spellingScore;}))
+		return this.recentTweets.find(x => x.spellingScore === worstScore);
 	}
-
 }

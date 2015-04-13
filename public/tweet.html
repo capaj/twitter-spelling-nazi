@@ -1,0 +1,11 @@
+<template>
+	<div class="img-container">
+		<img src.bind="data.user.profile_image_url" alt="">
+	</div>
+	<div>
+		<a href="//twitter.com/${data.user.screen_name}"><h4>${data.user.screen_name}</h4></a>
+		<p>${htmlDecode(data.text)}</p>
+	</div>
+	<div class="score">Score: ${data.spellingScore}</div>
+
+</template>
