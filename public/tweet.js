@@ -1,7 +1,7 @@
 import {customElement, bindable} from 'aurelia-framework';
 
 @customElement('tweet')
-export class SayHello {
+export class Tweet {
 	@bindable data;
 
 	htmlDecode(input){
